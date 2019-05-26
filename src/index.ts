@@ -75,16 +75,16 @@ window.onload = () => {
 
     const renderPosts = (posts): string => {
         const postsToRender = posts.map(post => {
-           return (
-               '<li>' +
-                    `<p>Title: ${post.title}</p>` +
-                    '<div>' +
-                        `<p class="score">Upvotes: ${post.upvotes}</p>` +
-                        `<p class="score">Downvotes: ${post.downvotes}</p>` +
-                    '</div>' +
-               '</li>'
-           )
-        }).reduce((prev,curr) => prev + curr);
+            return (
+                '<li>' +
+                `<p>Title: ${post.title}</p>` +
+                '<div>' +
+                `<p class="score">Upvotes: ${post.upvotes}</p>` +
+                `<p class="score">Downvotes: ${post.downvotes}</p>` +
+                '</div>' +
+                '</li>'
+            )
+        }).reduce((prev, curr) => prev + curr);
 
         return (
             '<ul>' + (postsToRender) + '</ul>'
@@ -112,10 +112,10 @@ window.onload = () => {
     renderSelectedPostsBtns = new Component('#sort-dropdown', {
         template: () => {
             return (
-                '<button show-btn="showBestPost">' + 'Show best post' + '</button>'+
-                '<button show-btn="showAllPosts">' + 'Show all posts' + '</button>' +
-                '<button show-btn="reRenderPosts">' + 'Revert sorting' + '</button>'+
-                '<button show-btn="showLatestPosts">' + 'Show posts from last 24h' + '</button>'
+                '<button show-btn="showBestPost">' + '<i class="fab fa-gripfire"></i>' + '<p>Show best post</p>' + '</button>' +
+                '<button show-btn="showAllPosts">' + '<i class="fas fa-book-open"></i>' + '<p>Show all posts</p>' + '</button>' +
+                '<button show-btn="reRenderPosts">' + '<i class="fas fa-sync-alt"></i>' + '<p>Revert sorting</p>' + '</button>' +
+                '<button show-btn="showLatestPosts">' + '<i class="fas fa-hourglass"></i>' + '<p>Show posts from last 24h</p>' + '</button>'
             )
         }
     });
@@ -137,6 +137,9 @@ window.onload = () => {
         const action = event.target.getAttribute('show-btn');
         const sortAction = event.target.getAttribute('sort-btn');
 
+        console.log(event);
+        console.log(event.target.tagName.toLowerCase());
+
         const btnArray = document.getElementsByTagName('button');
 
         const filteredBtnArray = Array.from({length: btnArray.length}).map((item, index) => {
@@ -145,14 +148,13 @@ window.onload = () => {
             }
         }).filter(btn => btn !== undefined);
 
-        filteredBtnArray.forEach(btn => btn.classList.remove('selectedBtn'));
+        filteredBtnArray.forEach(btn => btn.classList.remove('selectedbtn'));
 
 
-        if(!event.target.classList.contains('selectedBtn') && action){
-            event.target.classList.add('selectedBtn')
+        if(!event.target.classList.contains('selectedbtn') && action){
+            event.target.classList.add('selectedbtn')
         }
 
-        console.log(filteredBtnArray);
 
         if(sortAction === 'sortPosts'){
             const optionSelected = [0,1,2,3].map( i => {
