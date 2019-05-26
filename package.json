@@ -10,7 +10,7 @@
     "testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" jasmine-ts --config=jasmine.json && nyc report"
   },
   "keywords": [
-    "typescript"
+    "typescript", "jasmine", "javascript"
   ],
   "devDependencies": {
     "@babel/core": "^7.2.2",
