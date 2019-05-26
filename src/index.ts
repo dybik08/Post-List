@@ -137,6 +137,22 @@ window.onload = () => {
         const action = event.target.getAttribute('show-btn');
         const sortAction = event.target.getAttribute('sort-btn');
 
+        const btnArray = document.getElementsByTagName('button');
+
+        const filteredBtnArray = Array.from({length: btnArray.length}).map((item, index) => {
+            if(btnArray[index].getAttribute('show-btn')){
+                return btnArray[index]
+            }
+        }).filter(btn => btn !== undefined);
+
+        filteredBtnArray.forEach(btn => btn.classList.remove('selectedBtn'));
+
+
+        if(!event.target.classList.contains('selectedBtn') && action){
+            event.target.classList.add('selectedBtn')
+        }
+
+        console.log(filteredBtnArray);
 
         if(sortAction === 'sortPosts'){
             const optionSelected = [0,1,2,3].map( i => {

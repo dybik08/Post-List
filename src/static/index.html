@@ -21,18 +21,34 @@
         <div class="post-list-container">
             <h3>POST LIST</h3>
             <p>Sort posts by:</p>
-            <label>
-                <input id="checked0" type="radio" name="sortPosts" value="upvotes"> Upvotes
-            </label>
-            <label>
-                <input id="checked1" type="radio" name="sortPosts" value="num_comments"> Number of comments
-            </label>
-            <label>
-                <input id="checked2" type="radio" name="sortPosts" value="score"> Score
-            </label>
-            <label>
-                <input id="checked3" type="radio" name="sortPosts" value="created"> Created
-            </label>
+            <form>
+                <div class="radiobtnlist">
+                    <div class="radiobtn">
+                        <input id="checked0" type="radio" name="sortPosts" value="upvotes" checked>
+                        <label for="checked0">
+                            Upvotes
+                        </label>
+                    </div>
+                    <div class="radiobtn">
+                        <input id="checked1" type="radio" name="sortPosts" value="num_comments">
+                        <label for="checked1">
+                            Total comments
+                        </label>
+                    </div>
+                    <div class="radiobtn">
+                        <input id="checked2" type="radio" name="sortPosts" value="score">
+                        <label for="checked2">
+                            Score
+                        </label>
+                    </div>
+                    <div class="radiobtn">
+                        <input id="checked3" type="radio" name="sortPosts" value="created">
+                        <label for="checked3">
+                            Created
+                        </label>
+                    </div>
+                </div>
+            </form>
             <div id="sort-btn">
 
             </div>
