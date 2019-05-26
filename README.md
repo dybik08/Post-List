@@ -1,7 +1,7 @@
 # Blog post list
 Blog site made with custom components & Typescript. Used jasmine as a testing library.
 
-![Application preview](https://imgur.com/g1PWvs3)
+![Application preview](https://i.imgur.com/gRMux7M.png)
 
 ## Running
 
